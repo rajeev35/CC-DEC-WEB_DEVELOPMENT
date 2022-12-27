@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="first.css">
+</head>
+    
+
+    <body>
+
+        <div class="converter-wrapper">
+          <h1>UNIT <br>CONVERTER</h1><br><br>
+        
+          <form name="property_form">
+            <span>
+              <select class="select-property" name="the_menu" size=1 onChange="UpdateUnitMenu(this, document.form_A.unit_menu); UpdateUnitMenu(this, document.form_B.unit_menu)">
+              </select>
+            </span>
+          </form><br><br><br>
+        
+          <div class="converter-side-a">
+            <form name="form_A" onSubmit="return false">
+              <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0" onKeyUp="CalculateUnit(document.form_A, document.form_B)">
+              <span>
+                <select name="unit_menu" onChange="CalculateUnit(document.form_B, document.form_A)">
+                </select>
+              </span>
+            </form>
+          </div> <!-- /converter-side-a -->
+          
+         <div class="converter-equals">
+           <p>=</p>
+         </div> <!-- /converter-side-a -->
+        
+          <div class="converter-side-b">
+            <form name="form_B" onSubmit="return false">
+              <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0" onkeyup="CalculateUnit(document.form_B, document.form_A)">
+              <span>
+                <select name="unit_menu" onChange="CalculateUnit(document.form_A, document.form_B)">
+                </select>
+              </span>
+            </form>
+          </div> <!-- /converter-side-b -->
+        </div><!-- /converter-wrapper -->
+          
+           
+        </body>
+        <script src="/first.js">
+          
+        </script>
+
+</html>
